@@ -1,0 +1,151 @@
+<section id="final">
+  <h3>{{personalData.name}}: {{personalData.occupation}}</h3>
+  <div class="box">
+    <div class="characteristics-left">
+      <ul>
+        <li ng-repeat="characteristic in characteristics track by $index">
+          <input class="score populated" type="button" value="{{characteristic[1]}}" disabled>
+          <label class="characteristics-label">{{characteristic[0]}}</label>
+        </li>
+      </ul>
+    </div>
+    <div class="characteristics-right">
+      <ul>
+        <li>
+          <ul id="rolls4">
+            <li>
+              <input id="idea" class="roll" type="button" value="{{rolls.idea[1]}}" disabled>
+              <label for="idea" class="characteristics-label">Idea</label>
+            </li>
+            <li>
+              <input id="luck" class="roll" type="button" value="{{rolls.luck[1]}}" disabled>
+              <label for="luck" class="characteristics-label">Luck</label>
+            </li>
+            <li>
+              <input id="know" class="roll" type="button" value="{{rolls.know[1]}}" disabled>
+              <label for="know" class="characteristics-label">Know</label>
+            </li>
+            <li>
+              <input id="damage" class="roll" type="button" value="{{rolls.damageBonus[1]}}" disabled>
+              <label for="damage" class="characteristics-label">Damage Bonus</label>
+            </li>
+            <li>
+              <input id="blank" class="roll blank" type="button">
+              <label for="blank" class="characteristics-label blank">.</label>
+            </li>
+            <li>
+              <input id="mythos99" class="points" type="button" value="{{rolls.mythos99[1]}}" disabled>
+              <label for="mythos99" class="characteristics-label">99 - Mythos</label>
+            </li>
+            <li>
+              <input id="hitpoints" class="points" type="button" value="{{rolls.hitpoints[1]}}" disabled>
+              <label for="hitpoints" class="characteristics-label">Hit Points</label>
+            </li>
+            <li>
+              <input id="magicpoints" class="points" type="button" value="{{rolls.magicpoints[1]}}" disabled>
+              <label for="magicpoints" class="characteristics-label">Magic Points</label>
+            </li>
+            <li>
+              <input id="sanpoints" class="points" type="button" value="{{rolls.sanpoints[1]}}" disabled>
+              <label for="sanpoints" class="characteristics-label">Sanity Points</label>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="text-right">
+      <div class="text-right">
+        <ul class="personal-data">
+          <li>
+            <label for="name">Investigator Name</label>
+            <input id="name" type="text" value="{{personalData.name}}" disabled>
+          </li>
+          <li>
+            <label for="occupation">Occupation</label>
+            <input id="occupation" type="text" value="{{personalData.occupation}}" disabled>
+          </li>
+          <li>
+            <label for="colleges">Colleges, Degrees</label>
+            <input id="colleges" type="text" value="{{personalData.colleges}}" disabled>
+          </li>
+          <li>
+            <label for="birthplace">Birthplace</label>
+            <input id="birthplace" type="text" value="{{personalData.birthplace}}" disabled>
+          </li>
+          <li>
+            <label for="disorders">Mental Disorders</label>
+            <input id="disorders" type="text" value="{{personalData.disorders}}" disabled>
+          </li>
+          <li>
+            <label for="gender">Gender</label>
+            <input id="gender" type="text" value="{{personalData.gender}}" disabled>
+          </li>
+          <li>
+            <label for="age">Age</label>
+            <input id="age" type="text" value="{{personalData.age}}" disabled>
+          </li>
+          <li>
+            <label for="income">Annual Income</label>
+            <input id="income" type="text" value="{{personalData.annualIncome}}" disabled>
+          </li>
+          <li>
+            <label for="assets">Additional Assets</label>
+            <input id="assets" type="text" value="{{personalData.additionalAssets}}" disabled>
+          </li>
+        </ul>
+      </div>
+      <div class="weapons">
+        <table>
+          <tr>
+            <th>Melee Weapon</th>
+            <th>%</th>
+            <th>Dmg</th>
+            <th>Hnd</th>
+            <th>Rng</th>
+            <th>Att</th>
+            <th>HP</th>
+          </tr>
+          <tr ng-repeat="weapon in weapons">
+            <td>{{weapon[0]}}</td>
+            <td>{{weapon[1]}}</td>
+            <td>{{weapon[2]}}</td>
+            <td>{{weapon[3]}}</td>
+            <td>{{weapon[4]}}</td>
+            <td>{{weapon[5]}}</td>
+            <td>{{weapon[6]}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="column-left">
+      <ul class="skills" id="skills-group1">
+        <li ng-repeat="skill1 in skills1 | orderBy: $index">
+          <label for="{{skill1}}">{{skill1[0]}}</label>
+          <input id="{{skill1}}" type="number" ng-model="skill1[1]" disabled>
+        </li>
+      </ul>
+    </div>
+    <div class="column-mid">
+      <ul class="skills" id="skills-group2">
+        <li ng-repeat="skill2 in skills2 | orderBy: $index">
+          <label for="{{skill2}}">{{skill2[0]}}</label>
+          <input id="{{skill2}}" type="number" ng-model="skill2[1]" disabled>
+        </li>
+      </ul>
+    </div>
+    <div class="column-right">
+      <ul class="skills" id="skills-group3">
+        <li ng-repeat="skill3 in skills3 | orderBy: $index">
+          <label for="{{skill3}}">{{skill3[0]}}</label>
+          <input id="{{skill3}}" type="number" ng-model="skill3[1]" disabled>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav-buttons">
+    <input type="button" value="Generate PDF" ng-click="createPDF()">
+    <input type="button" value="Show JSON" ui-sref="json">
+  </div>
+</section>

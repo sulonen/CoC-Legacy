@@ -1,0 +1,324 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+  margin: 0 20px;
+}
+
+#header {
+  padding: 20px 20px 0;
+}
+
+#content {
+  padding: 0 20px 90px;
+}
+
+#footer {
+  width: 100%;
+  height: 50px;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.blank {
+  visibility: hidden;
+}
+
+.horizontal {
+  width: 100%;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.horizontal li {
+  display: inline;
+}
+
+.horizontal-points {
+  width: 72px;
+  height: 42px;
+  padding-top: 4px;
+  background: #ffffff;
+  border: 4px solid orange;
+  box-shadow: 2px 5px 5px #929292;
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.available-points {
+  height: 26px;
+  width: 64px;
+  padding:5px 0 3px;
+  border: 4px solid darkred;
+  box-shadow: 2px 5px 5px #929292;
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.red {
+  color: red;
+}
+
+.horizontal-label {
+  padding-top: 12px;
+  margin-left: 10px;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+label {
+  font-size: 14px;
+}
+
+.box {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.characteristics-left {
+  order: 1;
+  flex: 0 1 15%;
+  align-self: auto;
+  min-width: 15%;
+}
+
+.characteristics-right {
+  order: 2;
+  flex: 0 1 25%;
+  align-self: auto;
+  min-width: 25%;
+}
+
+.text-right {
+  order: 3;
+  flex: 1 0;
+  align-self: auto;
+  min-width: 50%;
+  margin-left: 20px;
+}
+
+.column-left {
+  order: 1;
+  flex: 0 1 30%;
+  align-self: auto;
+  min-width: 30%;
+  margin-right: 3%;
+}
+
+.column-mid {
+  order: 2;
+  flex: 0 1 33%;
+  align-self: auto;
+  min-width: 33%;
+  margin-right: 3%;
+}
+
+.column-right {
+  order: 3;
+  flex: 0 1 33%;
+  align-self: auto;
+  min-width: 30%;
+}
+
+.two-columns-right {
+  order: 2;
+  flex: 0 1 66%;
+  align-self: auto;
+  min-width: 66%;
+}
+
+.half-left {
+  order: 1;
+  flex: 0 1 48%;
+  align-self: auto;
+  min-width: 48%;
+  margin-right: 3%;
+}
+
+.half-right {
+  order: 2;
+  flex: 1 0;
+  align-self: auto;
+  min-width: 49%;
+}
+
+.score, .roll, .points {
+  display: inline-block;
+  float: left;
+  clear: left;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  padding-top: 4px;
+  background: #ffffff;
+  border: 4px solid lightgray;
+  box-shadow: 2px 5px 5px #929292;
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.roll {
+  width: 70px;
+  border: 4px solid orange;
+  border-radius: 0;
+}
+
+.points {
+  width: 70px;
+  border: 4px solid darkred;
+  border-radius: 0;
+}
+
+.populated {
+  border: 4px solid darkgreen;
+}
+
+.characteristics-label {
+  float: left;
+  padding-top: 12px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.personal-data li {
+  display: flex;
+}
+
+.personal-data label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  padding-top: 4px;
+  padding-right: 20px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.personal-data input {
+  flex: 1;
+  width: 60%;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.personal-data select {
+  margin: 2px 10px 0;
+  vertical-align: bottom;
+}
+
+#age {
+  flex: none;
+  width: 20%;
+}
+
+#era {
+  margin-left: 0;
+}
+
+.spacer {
+  width: 20%;
+}
+
+.skills input {
+  float: right;
+  width: 15%;
+}
+
+.nav-buttons {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding-right: 40px;
+}
+
+.nav-buttons input[type="button"] {
+  float: right;
+  border: solid gray 1px;
+  background: darkgreen;
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 1px 1px black;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.nav-buttons input[type="button"].set {
+  background: orange;
+}
+
+.nav-buttons input[type="button"].reroll {
+  background: darkred;
+}
+
+input.ng-invalid {
+  border: 3px solid red;
+}
+
+.invalid-age {
+  color: red;
+  font-weight: 600;
+}
+
+.weapons {
+  margin-top: 46px;
+  float: right;
+  width: 95%;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.weapons table {
+  width: 100%;
+}
+
+.weapons tr {
+  border-bottom: 1px solid gray;
+}
+
+.weapons th {
+  text-align: left;
+}
+
+pre {
+  font-size: small;
+}
+
+input:disabled {
+  background: white;
+}

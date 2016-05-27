@@ -1,0 +1,39 @@
+<section id="step6">
+  <h3>Step 6: (Occupations and) Skills</h3>
+  <div class="box">
+    <div class="column-left">
+      <ul>
+        <li>
+          <input id="occupationPoints1" class="roll" type="button" value="{{personalData.occupationPoints}}" disabled>
+          <label for="occupationPoints1" class="characteristics-label">Occupation Points</label>
+        </li>
+        <li>
+          <input id="interestPoints1" class="roll" type="button" value="{{personalData.interestPoints}}" disabled>
+          <label for="interestPoints1" class="characteristics-label">Interest Points</label>
+        </li>
+        <li>
+          <input id="totalPoints1" class="points" type="button" value="{{personalData.totalPoints}}" disabled>
+          <label for="totalPoints1" class="characteristics-label">Total Points</label>
+        </li>
+      </ul>
+    </div>
+    <div class="two-columns-right">
+      <p>The standard <em>Call of Cthulhu</em> way to handle occupations and skills involves selecting an occupation from a list,
+        applying <em>Occupation Points</em> only to skills associated with that occupation, and then allocating
+        <em>Interest Points</em> freely among all available skills.</p>
+      <p>This method's fine if you're just starting out or if you need to roll up an Investigator quickly. In general, we (our
+        CoC gaming group) like to pool the points and spend them as we'd like to. That's what I've done here.</p>
+      <p>You're welcome to spend your points according to the standard method (that's why I've provided the two points categories),
+        but you'll need to use the list in the book or work with your Keeper (GM) to create a custom occupation.</p>
+      <p>Enter percentiles in the boxes to the right of the skills on the next page. The <em>Total Points</em> number will decrease
+        as you spend your points. If you go over, the number will turn red and stay that way until you fix the percentiles. Do
+        make sure to spend all your points though; unspent points are discarded.</p>
+      <p><b>Please note:</b> The <em>Cthulhu Mythos</em> skill can only be increased by exposure to the Mythos. It can't be
+        purchased or upgraded like other skills.</p>
+      <p>If you want to start over, just click the "Reset" button. When you're done, click the "Next" button.</p>
+    </div>
+  </div>
+  <div class="nav-buttons">
+    <input type="button" value="Next" ui-sref="step7">
+  </div>
+</section>

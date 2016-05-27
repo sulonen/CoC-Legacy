@@ -1,0 +1,59 @@
+<section id="step1" ng-controller="Rolls1Ctrl as dice">
+  <h3>Step 1: Assign initial characteristic scores</h3>
+  <div class="box">
+    <div class="characteristics-left">
+      <ul>
+        <li>
+          <input id="str" class="score" type="button" ng-click="moveValue($event)">
+          <label for="str" class="characteristics-label">STR</label>
+        </li>
+        <li>
+          <input id="con" class="score" type="button" ng-click="moveValue($event)">
+          <label for="con" class="characteristics-label">CON</label>
+        </li>
+        <li>
+          <input id="pow" class="score" type="button" ng-click="moveValue($event)">
+          <label for="pow" class="characteristics-label">POW</label>
+        </li>
+        <li>
+          <input id="dex" class="score" type="button" ng-click="moveValue($event)">
+          <label for="dex" class="characteristics-label">DEX</label>
+        </li>
+        <li>
+          <input id="app" class="score" type="button" ng-click="moveValue($event)">
+          <label for="app" class="characteristics-label">APP</label>
+        </li>
+      </ul>
+    </div>
+    <div class="characteristics-right">
+      <ul id="rolls1">
+        <li ng-repeat="roll in dice.rolls track by $index">
+          <input class="score populated" type="button" value="{{roll}}" ng-click="moveValue($event)">
+        </li>
+      </ul>
+    </div>
+    <div class="text-right">
+      <p>The characteristics listed in the left column are created by rolling 3d6 and represent what you'd
+        imagine them to:</p>
+      <ul>
+        <li><b>STR:</b> A character's strength. This characteristic is a factor in calculating hand-to-hand combat damage.
+          If a character's strength is reduced to 0, the character becomes an invalid.</li>
+        <li><b>CON:</b> Constitution is a measure of health, vigor, or vitality. Constitution is used to calculate hit
+          points and certain resistances. If constitution is reduced to 0, a character dies.</li>
+        <li><b>POW:</b> Power indicates force of will and a character's aptitude for magic. It's used to calculate magic
+          points, resistance to magical or hypnotic attacks, <em>Luck</em>, and <em>Sanity</em>.</li>
+        <li><b>DEX:</b> Dexterity represents quickness and flexibility. Dexterity is used to determine combat order and the
+          starting percentage of an investigator's <em>Dodge</em> skill.</li>
+        <li><b>APP:</b> Appearance indicates attractiveness or friendliness. It's generally a characteristic used in
+          conjunction with skills like <em>Fast Talk</em> or <em>Bargain</em>.</li>
+      </ul>
+      <p>Dice rolls are provided in the right column (in the green circles). Click one, and then click the gray circle
+        next to the characteristic you'd like to assign it to. If you're unhappy with the rolls, click the "Reroll"
+        button below. When you're satisfied, click the "Next" button.</p>
+    </div>
+  </div>
+  <div class="nav-buttons">
+    <input type="button" value="Next"  ui-sref="step2" ng-click="update()">
+    <input class="reroll" type="button" value="Reroll" ng-click="dice.reroll()">
+  </div>
+</section>

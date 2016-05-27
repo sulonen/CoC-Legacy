@@ -1,0 +1,41 @@
+<section id="step2" ng-controller="Rolls2Ctrl as dice">
+  <h3>Step 2: Assign secondary characteristic scores</h3>
+  <div class="box">
+    <div class="characteristics-left">
+      <ul>
+        <li>
+          <input id="siz" class="score" type="button" value="" ng-click="moveValue($event)">
+          <label for="siz" class="characteristics-label">SIZ</label>
+        </li>
+        <li>
+          <input id="int" class="score" type="button" value="" ng-click="moveValue($event)">
+          <label for="int" class="characteristics-label">INT</label>
+        </li>
+      </ul>
+    </div>
+    <div class="characteristics-right">
+      <ul id="rolls2">
+        <li ng-repeat="roll in dice.rolls track by $index">
+          <input class="score populated" type="button" value="{{roll}}" ng-click="moveValue($event)">
+        </li>
+      </ul>
+    </div>
+    <div class="text-right">
+      <p>The second set of characteristics are created by rolling 2d6+6:</p>
+      <ul>
+        <li><b>SIZ:</b> Size combines height and weight and is a factor in the calculation of damage and hit points.</li>
+        <li><b>INT:</b> Intelligence represents how well investigators learn, remember, and analyze, and of how aware
+          they are of their surroundings. This characteristic determines the number of personal interest skill points
+          an investigator starts with, how quickly Cthulhu Mythos spells can be learned, and is used in calculating the
+          <em>Idea</em> roll.</li>
+      </ul>
+      <p>Dice rolls are again provided in the right column (in the green circles). Click one, and then click the gray
+        circle next to the characteristic you'd like to assign it to. If you're unhappy with the rolls, click the
+        "Reroll" button below. When you're satisfied, click the "Next" button.</p>
+    </div>
+  </div>
+  <div class="nav-buttons">
+    <input type="button" value="Next"  ui-sref="step3" ng-click="update()">
+    <input class="reroll" type="button" value="Reroll" ng-click="dice.reroll()">
+  </div>
+</section>

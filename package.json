@@ -1,0 +1,44 @@
+{
+  "name": "coc",
+  "version": "1.0.0",
+  "description": "Call of Cthulhu Investigator Generation",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulonen/CoC-Investigator.git"
+  },
+  "author": "Kevin Sulonen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sulonen/CoC-Investigator/issues"
+  },
+  "homepage": "https://github.com/sulonen/CoC-Investigator#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.11"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp-cli": "^1.2.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "morgan": "^1.7.0"
+  },
+  "keywords": [
+    "Call of Cthulhu",
+    "RPG",
+    "Character Generator",
+    "Cthulhu"
+  ]
+}
