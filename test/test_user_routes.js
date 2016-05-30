@@ -8,7 +8,7 @@ let request = chai.request;
 let expect = chai.expect;
 
 process.env.MONGO_LAB = 'mongodb://localhost/test';
-require(__dirname + '/../server');
+require(__dirname + '/../api_server');
 
 describe('Integration Tests (User Routes)', () => {
 
@@ -22,7 +22,7 @@ describe('Integration Tests (User Routes)', () => {
       .post('/signup')
       .send({
         fullName: 'User One',
-        email: 'user1@example.gov',
+        email: 'user1@example.com',
         password: '12345678'
       })
       .end((err, res) => {
@@ -38,7 +38,7 @@ describe('Integration Tests (User Routes)', () => {
       .post('/signup')
       .send({
         fullName: 'Admin User',
-        email: 'admin@example.org',
+        email: 'admin@example.com',
         password: '1234567890'
       })
       .end((err, res) => {

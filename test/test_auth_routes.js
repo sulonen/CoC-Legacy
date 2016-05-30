@@ -8,7 +8,7 @@ let request = chai.request;
 let expect = chai.expect;
 
 process.env.MONGO_DB = 'mongodb://localhost/test';
-require(__dirname + '/../server');
+require(__dirname + '/../api_server');
 
 describe('Integration Tests (Authentication Routes)', () => {
 
@@ -17,7 +17,7 @@ describe('Integration Tests (Authentication Routes)', () => {
       .post('/signup')
       .send({
         fullName: 'User One',
-        email: 'user1@example.gov',
+        email: 'user1@example.com',
         password: '12345678'
       })
       .end((err) => {
@@ -48,7 +48,7 @@ describe('Integration Tests (Authentication Routes)', () => {
         .post('/signup')
         .send({
           fullName: 'User Two',
-          email: 'user2@example.gov',
+          email: 'user2@example.com',
           password: '12345678'
         })
         .end((err, res) => {
@@ -63,7 +63,7 @@ describe('Integration Tests (Authentication Routes)', () => {
         .post('/signup')
         .send({
           fullName: 'User Three',
-          email: 'user3@example.gov',
+          email: 'user3@example.com',
           password: '12345678'
         })
       .end((err, res) => {
@@ -78,7 +78,7 @@ describe('Integration Tests (Authentication Routes)', () => {
         .post('/signup')
         .send({
           fullName: 'User Four',
-          email: 'user3@example.gov',
+          email: 'user3@example.com',
           password: '12345678'
         })
         .end((err, res) => {
@@ -95,7 +95,7 @@ describe('Integration Tests (Authentication Routes)', () => {
         .post('/signup')
         .send({
           fullName: 'User Five',
-          email: 'user5@example.gov',
+          email: 'user5@example.com',
           password: '12345678'
         })
         .end(() => {
@@ -106,7 +106,7 @@ describe('Integration Tests (Authentication Routes)', () => {
     it('should return a token on successful signin', (done) => {
       request('localhost:3000')
         .get('/signin')
-        .auth('user5@example.gov', '12345678')
+        .auth('user5@example.com', '12345678')
         .end((err, res) => {
           expect(err).to.eql(null);
           expect(res.status).to.eql(200);
