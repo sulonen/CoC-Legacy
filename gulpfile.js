@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
-// const mocha = require('gulp-mocha');
+const mocha = require('gulp-mocha');
 const exec = require('child_process').exec;
 const webpack = require('webpack-stream');
 
@@ -24,10 +24,10 @@ gulp.task('lint', () => {
     .pipe(eslint.format());
 });
 
-// gulp.task('test', () => {
-//   return gulp.src(paths)
-//   .pipe(mocha());
-// });
+gulp.task('test', () => {
+  return gulp.src(paths)
+    .pipe(mocha());
+});
 
 gulp.task('watch', () => {
   gulp.watch([paths], ['lint']);
@@ -73,3 +73,4 @@ gulp.task('webpack:test', () => {
 gulp.task('push', ['static', 'webpack:dist']);
 
 gulp.task('default', ['lint', 'static', 'webpack:dist', 'webpack:test']);
+
