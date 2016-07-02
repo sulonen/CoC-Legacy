@@ -10,9 +10,12 @@ const paths = ['*.js', 'src/*.js', 'test/*_spec.js', 'models/*.js'];
 
 var runCommand = function(command) {
   exec(command, (err, stdout, stderr) => {
+    /* eslint-disable */
     console.log(stdout);
+    /* eslint-disable */
     console.log(stderr);
     if (err !== null) {
+      /* eslint-disable */
       console.log('exec error: ' + err);
     }
   });
@@ -44,7 +47,7 @@ gulp.task('mongo-stop', () => {
 });
 
 gulp.task('static', function() {
-  return gulp.src(['src/*.html', 'src/**/*.html', 'src/*.ico'])
+  return gulp.src(['src/**/*.html', 'src/**/*.json', 'src/*.ico'])
     .pipe(gulp.dest('dist'));
 });
 
@@ -56,8 +59,8 @@ gulp.task('webpack:dist', () => {
       },
       module: {
         loaders: [{
-          test: /\.scss$/,
-          loaders: ['style', 'css', 'sass']
+          test: /\.css$/,
+          loaders: ['style', 'css']
         }]
       }
     }))
@@ -72,5 +75,5 @@ gulp.task('webpack:test', () => {
 
 gulp.task('push', ['static', 'webpack:dist']);
 
-gulp.task('default', ['lint', 'static', 'webpack:dist', 'webpack:test']);
+gulp.task('default', ['lint', 'static', 'webpack:dist']);
 

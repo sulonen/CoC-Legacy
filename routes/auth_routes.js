@@ -31,7 +31,6 @@ module.exports = (router) => {
         });
       }
     });
-
   });
 
   router.get('/signin', basicHTTP, (req, res) => {

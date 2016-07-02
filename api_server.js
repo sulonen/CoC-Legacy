@@ -28,6 +28,6 @@ app.use('/', authRouter);
 app.use('/', apiRouter);
 
 app.listen(PORT, () => {
+  /* eslint-disable */
   console.log('Server listening on port ' + PORT);
 });
-

@@ -8,6 +8,7 @@ let app = module.exports = exports = express();
 app.use(express.static('./dist'));
 
 app.listen(CLIENT_PORT, () => {
+  /* eslint-disable */
   console.log('Server listening on port ' + CLIENT_PORT);
 });
 
