@@ -5,36 +5,36 @@
       <ul>
         <li>
           <input id="str" class="score" type="button"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
           <label for="str" class="characteristics-label">STR</label>
         </li>
         <li>
           <input id="con" class="score" type="button"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
           <label for="con" class="characteristics-label">CON</label>
         </li>
         <li>
           <input id="pow" class="score" type="button"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
           <label for="pow" class="characteristics-label">POW</label>
         </li>
         <li>
           <input id="dex" class="score" type="button"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
           <label for="dex" class="characteristics-label">DEX</label>
         </li>
         <li>
           <input id="app" class="score" type="button"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
           <label for="app" class="characteristics-label">APP</label>
         </li>
       </ul>
     </div>
     <div class="characteristics-right">
       <ul id="rolls1">
-        <li data-ng-repeat="roll in dice.rolls track by $index">
+        <li ng-repeat="roll in dice.rolls track by $index">
           <input class="score populated" type="button" value="{{roll}}"
-            data-ng-click="step1.moveValue($event)">
+            ng-click="step1.moveValue($event)">
         </li>
       </ul>
     </div>
@@ -66,7 +66,7 @@
     </div>
   </div>
   <div class="nav-buttons">
-    <input type="button" value="Next"  data-ui-sref="step2" data-ng-click="update()">
-    <input class="reroll" type="button" value="Reroll" data-ng-click="dice.reroll()">
+    <input type="button" value="Next"  ui-sref="step2" ng-click="update()">
+    <input class="reroll" type="button" value="Reroll" ng-click="dice.reroll()">
   </div>
 </section>

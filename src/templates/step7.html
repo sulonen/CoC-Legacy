@@ -3,50 +3,66 @@
   <div class="box">
     <ul class="horizontal">
       <li>
-        <input id="occupationPoints2" type="button" class="horizontal-points" value="{{personalData.occupationPoints}}" disabled>
-        <label for="occupationPoints2" class="horizontal-label">Occupation Points</label>
+        <input id="occupationPoints2" type="button"
+          class="horizontal-points"
+          value="{{step7.personalData.occupationPoints}}" disabled>
+        <label for="occupationPoints2"
+          class="horizontal-label">Occupation Points</label>
       </li>
       <li>
-        <input id="interestPoints2" type="button" class="horizontal-points" value="{{personalData.interestPoints}}" disabled>
-        <label for="interestPoints2" class="horizontal-label">Interest Points</label>
+        <input id="interestPoints2" type="button"
+          class="horizontal-points"
+          value="{{step7.personalData.interestPoints}}" disabled>
+        <label for="interestPoints2"
+          class="horizontal-label">Interest Points</label>
       </li>
       <li>
-        <input id="availablePoints" type="text" class="available-points" ng-model="availablePoints" disabled>
-        <label for="availablePoints" class="horizontal-label">Available Points</label>
+        <input id="availablePoints" type="text"
+          class="available-points"
+          ng-model="step7.availablePoints" disabled>
+        <label for="availablePoints"
+          class="horizontal-label">Available Points</label>
       </li>
     </ul>
   </div>
   <div class="box">
     <div class="column-left">
       <ul class="skills" id="skills-group1">
-        <li ng-repeat="skill1 in tempSkills1 | orderBy: $index">
+        <li ng-repeat="skill1 in step7.tempSkills1 | orderBy: $index">
           <label for="{{skill1}}">{{skill1[0]}}</label>
-          <input id="{{skill1}}" type="number" min="{{skills1[skill1][1]}}" max="99"
-                 ng-model="skill1[1]" ng-disabled="{{skill1[0] == 'Cthulhu Mythos (00)'}}" ng-change="updateAvailablePoints()">
+          <input id="{{skill1}}" type="number"
+            min="{{step7.skills1[skill1][1]}}" max="99"
+            ng-model="skill1[1]"
+            ng-disabled="{{skill1[0] == 'Cthulhu Mythos (00)'}}"
+            ng-change="step7.updateAvailablePoints()">
         </li>
       </ul>
     </div>
     <div class="column-mid">
       <ul class="skills" id="skills-group2">
-        <li ng-repeat="skill2 in tempSkills2 | orderBy: $index">
+        <li ng-repeat="skill2 in step7.tempSkills2 | orderBy: $index">
           <label for="{{skill2}}">{{skill2[0]}}</label>
-          <input id="{{skill2}}" type="number" min="0" max="99"
-                 ng-model="skill2[1]" ng-change="updateAvailablePoints()">
+          <input id="{{skill2}}" type="number"
+            min={{step7.skills2[skill2][1]}} max="99"
+            ng-model="skill2[1]"
+            ng-change="step7.updateAvailablePoints()">
         </li>
       </ul>
     </div>
     <div class="column-right">
       <ul class="skills" id="skills-group3">
-        <li ng-repeat="skill3 in tempSkills3 | orderBy: $index">
+        <li ng-repeat="skill3 in step7.tempSkills3 | orderBy: $index">
           <label for="{{skill3}}">{{skill3[0]}}</label>
-          <input id="{{skill3}}" type="number" min="0" max="99"
-                 ng-model="skill3[1]" ng-change="updateAvailablePoints()">
+          <input id="{{skill3}}" type="number"
+            min="{{step7.skills3[skill3][1]}}" max="99"
+            ng-model="skill3[1]" ng-change="updateAvailablePoints()">
         </li>
       </ul>
     </div>
   </div>
   <div class="nav-buttons">
-    <input type="button" value="Next"  ui-sref="step8" ng-click="update()">
-    <input class="reroll" type="button" value="Reset Skills" ng-click="resetSkills()">
+    <input type="button" value="Next"  ui-sref="step8" ng-click="step7.update()">
+    <input class="reroll" type="button" value="Reset Skills"
+      ng-click="step7.resetSkills()">
   </div>
 </section>

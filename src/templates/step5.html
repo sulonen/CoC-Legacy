@@ -5,36 +5,45 @@
       <ul class="personal-data">
         <li>
           <label for="playerEmail">Player Email</label>
-          <input id="playerEmail" type="email" ng-model="personalData.playerEmail" required>
+          <input id="playerEmail" type="email"
+            ng-model="step5.personalData.playerEmail" required>
         </li>
         <li>
           <label for="name">Investigator Name</label>
-          <input id="name" type="text" ng-model="personalData.name" required>
+          <input id="name" type="text"
+            ng-model="step5.personalData.name" required>
         </li>
         <li>
           <label for="occupation">Occupation</label>
-          <input id="occupation" type="text" ng-model="personalData.occupation">
+          <input id="occupation" type="text"
+            ng-model="step5.personalData.occupation">
         </li>
         <li>
           <label for="colleges">Colleges, Degrees</label>
-          <input id="colleges" type="text" ng-model="personalData.colleges">
+          <input id="colleges" type="text"
+            ng-model="step5.personalData.colleges">
         </li>
         <li>
           <label for="birthplace">Birthplace</label>
-          <input id="birthplace" type="text" ng-model="personalData.birthplace">
+          <input id="birthplace" type="text"
+            ng-model="step5.personalData.birthplace">
         </li>
         <li>
           <label for="disorders">Mental Disorders</label>
-          <input id="disorders" type="text" ng-model="personalData.disorders">
+          <input id="disorders" type="text"
+            ng-model="step5.personalData.disorders">
         </li>
         <li>
           <label for="gender">Gender</label>
-          <input id="gender" type="text" ng-model="personalData.gender">
+          <input id="gender" type="text"
+            ng-model="step5.personalData.gender">
         </li>
         <li>
           <label for="age">Age</label>
-          <input id="age" type="number" min="{{personalData.age}}" max="{{personalData.age + 60}}" size="5" ng-model="tempAge">
-          <select id="penaltyCharacteristic" ng-model="personalData.agePenalty[0]">
+          <input id="age" type="number" min="{{step5.personalData.age}}"
+            max="{{step5.personalData.age + 60}}" size="5" ng-model="step5.tempAge">
+          <select id="penaltyCharacteristic"
+            ng-model="step5.personalData.agePenalty[0]">
             <option value="str">STR</option>
             <option value="con">CON</option>
             <option value="dex">DEX</option>
@@ -42,7 +51,7 @@
           </select>
         </li>
         <li><label for="era">Era</label>
-          <select id="era" ng-model="personalData.era">
+          <select id="era" ng-model="step5.personalData.era">
             <option value="1890s">1890s</option>
             <option value="1920s">1920s</option>
             <option value="Present">Present</option>
@@ -50,34 +59,47 @@
         </li>
         <li>
           <label for="annualIncome">Annual Income</label>
-          <input id="annualIncome" type="text" ng-model="personalData.annualIncome">
+          <input id="annualIncome" type="text"
+            ng-model="step5.personalData.annualIncome">
         </li>
         <li>
           <label for="additionalAssets">Additional Assets</label>
-          <input id="additionalAssets" type="text" ng-model="personalData.additionalAssets">
+          <input id="additionalAssets" type="text"
+            ng-model="step5.personalData.additionalAssets">
         </li>
       </ul>
     </div>
     <div class="half-right">
-      <p class="invalid-age" ng-show="invalidAge">The age change you're attempting will result in a reduction of your investigator's
-        <em>CON</em> or hit points to a fatal level. <em>Age</em> has been reset to the original default. Please adjust the
-        penalty characteristic or the age and try again, or click the "Next" button.</p>
-      <p>Fill these in with values as you see fit. <em>Player Email</em> and <em>Investigator Name</em> will be used as
-        keys when this investigator is saved to the database.</p>
-      <p><em>Age</em> is a special case. The minimum age for an investigator is <em>EDU</em> + 6 years. For each ten years
-        older than that, we'll add one point of <em>EDU</em> and grant an additional 20 occupation points (more on those
-        later). However: for each 10 years above age 40, we'll subtract one point from <em>STR</em>, <em>CON</em>,
-        <em>DEX</em>, or <em>APP</em> (your choice, with the default being <em>STR</em>).</p>
-      <p>If you decide to modify your investigator's age, enter the new age, select the characteristic you'd like the penalty
-        to be subtracted from, and click the "Set Age" button below. This will modify your investigator's age and apply
-        the penalty (if any) <em>and isn't undoable</em>.</p>
-      <p>To determine your investigator's annual income and additional assets, select an <em>Era</em> from the dropdown and
-        click the "(Re)Roll Income" button below.</p>
+      <p class="invalid-age" ng-show="invalidAge">The age change you're
+        attempting will result in a reduction of your investigator's
+        <em>CON</em> or hit points to a fatal level. <em>Age</em> has been
+        reset to the original default. Please adjust the penalty
+        characteristic or the age and try again, or click the "Next"
+        button.</p>
+      <p>Fill these in with values as you see fit. <em>Player Email</em>
+        and <em>Investigator Name</em> will be used as keys when this
+        investigator is saved to the database.</p>
+      <p><em>Age</em> is a special case. The minimum age for an investigator
+        is <em>EDU</em> + 6 years. For each ten years older than that, we'll
+        add one point of <em>EDU</em> and grant an additional 20 occupation
+        points (more on those later). However: for each 10 years above age 40,
+        we'll subtract one point from <em>STR</em>, <em>CON</em>, <em>DEX</em>,
+        or <em>APP</em> (your choice, with the default being <em>STR</em>).</p>
+      <p>If you decide to modify your investigator's age, enter the new age,
+        select the characteristic you'd like the penalty to be subtracted
+        from, and click the "Set Age" button below. This will modify your
+        investigator's age and apply the penalty (if any)
+        <em>and isn't undoable</em>.</p>
+      <p>To determine your investigator's annual income and additional assets,
+        select an <em>Era</em> from the dropdown and click the "(Re)Roll
+        Income" button below.</p>
     </div>
   </div>
   <div class="nav-buttons">
     <input type="button" value="Next" ui-sref="step6">
-    <input class="set" type="button" value="(Re)Roll Income" ng-click="getIncome()">
-    <input class="reroll" type="button" value="Set Age" ng-click="changeAge()">
+    <input class="set" type="button" value="(Re)Roll Income"
+      ng-click="step5.getIncome()">
+    <input class="reroll" type="button" value="Set Age"
+      ng-click="step5.changeAge()">
   </div>
 </section>

@@ -3,9 +3,10 @@
   <div class="box">
     <div class="characteristics-left">
       <ul>
-        <li ng-repeat="characteristic in characteristics track by $index">
-          <input class="score populated" type="button" value="{{characteristic[1]}}" disabled>
-          <label class="characteristics-label">{{characteristic[0]}}</label>
+        <li ng-repeat="characteristic in step4.characteristics track by $index">
+          <input class="score populated" type="button"
+            value="{{step4.characteristic[1]}}" disabled>
+          <label class="characteristics-label">{{step4.characteristic[0]}}</label>
         </li>
       </ul>
     </div>
@@ -14,19 +15,23 @@
         <li>
           <ul id="rolls4">
             <li>
-              <input id="idea" class="roll" type="button" value="{{rolls.idea[1]}}" disabled>
+              <input id="idea" class="roll" type="button"
+                value="{{step4.rolls.idea[1]}}" disabled>
               <label for="idea" class="characteristics-label">Idea</label>
             </li>
             <li>
-              <input id="luck" class="roll" type="button" value="{{rolls.luck[1]}}" disabled>
+              <input id="luck" class="roll" type="button"
+                value="{{step4.rolls.luck[1]}}" disabled>
               <label for="luck" class="characteristics-label">Luck</label>
             </li>
             <li>
-              <input id="know" class="roll" type="button" value="{{rolls.know[1]}}" disabled>
+              <input id="know" class="roll" type="button"
+                value="{{step4.rolls.know[1]}}" disabled>
               <label for="know" class="characteristics-label">Know</label>
             </li>
             <li>
-              <input id="damage" class="roll" type="button" value="{{rolls.damageBonus[1]}}" disabled>
+              <input id="damage" class="roll" type="button"
+                value="{{step4.rolls.damageBonus[1]}}" disabled>
               <label for="damage" class="characteristics-label">Damage Bonus</label>
             </li>
             <li>
@@ -34,19 +39,23 @@
               <label for="blank" class="characteristics-label blank">.</label>
             </li>
             <li>
-              <input id="mythos99" class="points" type="button" value="{{rolls.mythos99[1]}}" disabled>
+              <input id="mythos99" class="points" type="button"
+                value="{{step4.rolls.mythos99[1]}}" disabled>
               <label for="mythos99" class="characteristics-label">99 - Mythos</label>
             </li>
             <li>
-              <input id="hitpoints" class="points" type="button" value="{{rolls.hitpoints[1]}}" disabled>
+              <input id="hitpoints" class="points" type="button"
+                value="{{step4.rolls.hitpoints[1]}}" disabled>
               <label for="hitpoints" class="characteristics-label">Hit Points</label>
             </li>
             <li>
-              <input id="magicpoints" class="points" type="button" value="{{rolls.magicpoints[1]}}" disabled>
+              <input id="magicpoints" class="points" type="button"
+                value="{{step4.rolls.magicpoints[1]}}" disabled>
               <label for="magicpoints" class="characteristics-label">Magic Points</label>
             </li>
             <li>
-              <input id="sanpoints" class="points" type="button" value="{{rolls.sanpoints[1]}}" disabled>
+              <input id="sanpoints" class="points" type="button"
+                value="{{rolls.sanpoints[1]}}" disabled>
               <label for="sanpoints" class="characteristics-label">Sanity Points</label>
             </li>
           </ul>
@@ -57,21 +66,33 @@
       <p>As you can see, your rolls have contributed to some additional scores:</p>
       <ul>
         <li><b>SAN:</b> Sanity is <em>POW</em> multiplied by 5.</li>
-        <li><b>Idea:</b> Refers to hunches and the ability to interpret obvious things.</li>
-        <li><b>Luck:</b> Represents an investigator's ability to be in the right place at the right time.</li>
-        <li><b>Know:</b> Is a chance to have knowledge on a subject even without a corresponding skill.</li>
-        <li><b>Damage Bonus:</b> Additional damage (or penalty) applied to damage rolls in melee combat.</li>
-        <li><b>99 - Mythos:</b> This is an odd number and is peculiar to this game system. As an investigator encounters the
-          horrors of the Cthulhu Mythos, their percentile in the <em>Cthulhu Mythos</em> skill increases. This can be
-          both good and bad. The investigator's ability to identify entities and situations (and, hopefully, to counter or
-          evade them) increases. At the same time, exposure to the Mythos tends to whittle away at human sanity. This
-          number represents an investigator's maximum sanity.</li>
-        <li><b>Hit Points:</b> Are a representation of an investigator's physical health. When hit points are reduced to 2 or
-          less, an investigator becomes unconscious. At 0 or lower, the investigator dies, unless their hit points can be raised
-          to at least +1 by the end of the following round.</li>
-        <li><b>Magic Points:</b> Magic points are currency in the casting of spells or fighting off malign influences.</li>
-        <li><b>Sanity Points:</b> As a session progresses, Sanity Points will fluctuate. The <em>SAN</em> characteristic
-          doesn't. Sanity Points are the gauge of an investigator's mental health over time.</li>
+        <li><b>Idea:</b> Refers to hunches and the ability to interpret obvious
+          things.</li>
+        <li><b>Luck:</b> Represents an investigator's ability to be in the right
+          place at the right time.</li>
+        <li><b>Know:</b> Is a chance to have knowledge on a subject even without
+          a corresponding skill.</li>
+        <li><b>Damage Bonus:</b> Additional damage (or penalty) applied to damage
+          rolls in melee combat.</li>
+        <li><b>99 - Mythos:</b> This is an odd number and is peculiar to this
+          game system. As an investigator encounters the horrors of the Cthulhu
+          Mythos, their percentile in the <em>Cthulhu Mythos</em> skill increases.
+          This can be both good and bad. The investigator's ability to identify
+          entities and situations (and, hopefully, to counter or evade them)
+          increases. At the same time, exposure to the Mythos tends to whittle
+          away at human sanity. This number represents an investigator's maximum
+          sanity.</li>
+        <li><b>Hit Points:</b> Are a representation of an investigator's physical
+          health. When hit points are reduced to 2 or less, an investigator
+          becomes unconscious. At 0 or lower, the investigator dies, unless their
+          hit points can be raised to at least +1 by the end of the following
+          round.</li>
+        <li><b>Magic Points:</b> Magic points are currency in the casting of
+          spells or fighting off malign influences.</li>
+        <li><b>Sanity Points:</b> As a session progresses, Sanity <b>Points</b>
+          will fluctuate. The <em>SAN</em> <b>characteristic</b> doesn't.
+          Sanity Points are the gauge of an investigator's mental health over
+          time.</li>
       </ul>
       <p>Let's add some additional character detail.</p>
     </div>

@@ -1,25 +1,25 @@
-<section id="step2" ng-controller="Rolls2Ctrl as dice">
+<section id="step2" ng-controller="Rolls2Controller as dice">
   <h3>Step 2: Assign secondary characteristic scores</h3>
   <div class="box">
     <div class="characteristics-left">
       <ul>
         <li>
           <input id="siz" class="score" type="button"
-            data-ng-click="step2.moveValue($event)">
+            ng-click="step2.moveValue($event)">
           <label for="siz" class="characteristics-label">SIZ</label>
         </li>
         <li>
           <input id="int" class="score" type="button"
-            data-ng-click="step2.moveValue($event)">
+            ng-click="step2.moveValue($event)">
           <label for="int" class="characteristics-label">INT</label>
         </li>
       </ul>
     </div>
     <div class="characteristics-right">
       <ul id="rolls2">
-        <li data-ng-repeat="roll in dice.rolls track by $index">
+        <li ng-repeat="roll in dice.rolls track by $index">
           <input class="score populated" type="button" value="{{roll}}"
-            data-ng-click="moveValue($event)">
+            ng-click="moveValue($event)">
         </li>
       </ul>
     </div>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="nav-buttons">
-    <input type="button" value="Next"  data-ui-sref="step3" data-ng-click="update()">
-    <input class="reroll" type="button" value="Reroll" data-ng-click="dice.reroll()">
+    <input type="button" value="Next"  ui-sref="step3" ng-click="update()">
+    <input class="reroll" type="button" value="Reroll" ng-click="dice.reroll()">
   </div>
 </section>
