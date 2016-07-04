@@ -131,7 +131,6 @@
       vm.json = {};
       $log.info('Data load complete');
     }
-    //angular.element(document.querySelector('.ng-scope')).injector().get('dataService.data.)
   }
 
   angular
