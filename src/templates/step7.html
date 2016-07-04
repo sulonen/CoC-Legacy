@@ -31,7 +31,7 @@
         <li ng-repeat="skill1 in step7.tempSkills1 | orderBy: $index">
           <label for="{{skill1}}">{{skill1[0]}}</label>
           <input id="{{skill1}}" type="number"
-            min="{{step7.skills1[skill1][1]}}" max="99"
+            min="{{skill1[2]}}" max="99"
             ng-model="skill1[1]"
             ng-disabled="{{skill1[0] == 'Cthulhu Mythos (00)'}}"
             ng-change="step7.updateAvailablePoints()">
@@ -43,7 +43,7 @@
         <li ng-repeat="skill2 in step7.tempSkills2 | orderBy: $index">
           <label for="{{skill2}}">{{skill2[0]}}</label>
           <input id="{{skill2}}" type="number"
-            min={{step7.skills2[skill2][1]}} max="99"
+            min="{{skill2[2]}}" max="99"
             ng-model="skill2[1]"
             ng-change="step7.updateAvailablePoints()">
         </li>
@@ -54,8 +54,8 @@
         <li ng-repeat="skill3 in step7.tempSkills3 | orderBy: $index">
           <label for="{{skill3}}">{{skill3[0]}}</label>
           <input id="{{skill3}}" type="number"
-            min="{{step7.skills3[skill3][1]}}" max="99"
-            ng-model="skill3[1]" ng-change="updateAvailablePoints()">
+            min="{{skill3[2]}}" max="99"
+            ng-model="skill3[1]" ng-change="step7.updateAvailablePoints()">
         </li>
       </ul>
     </div>

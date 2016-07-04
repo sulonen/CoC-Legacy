@@ -5,7 +5,7 @@
       <ul>
         <li>
           <input id="edu" class="score" type="button"
-            ng-click="moveValue($event)">
+            ng-click="step3.moveValue($event)">
           <label for="edu" class="characteristics-label">EDU</label>
         </li>
       </ul>
@@ -14,7 +14,7 @@
       <ul id="rolls3">
         <li ng-repeat="roll in dice.rolls track by $index">
           <input class="score populated" type="button" value="{{roll}}"
-            ng-click="moveValue($event)">
+            ng-click="step3.moveValue($event)">
         </li>
       </ul>
     </div>
@@ -37,7 +37,7 @@
   </div>
   <div class="nav-buttons">
     <input type="button" value="Next" ui-sref="step4"
-      ng-click="update(); calcScores()">
+      ng-click="step3.update(); step3.calcScores()">
     <input class="reroll" type="button" value="Reroll"
       ng-click="dice.reroll()">
   </div>

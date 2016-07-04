@@ -40,8 +40,10 @@
         </li>
         <li>
           <label for="age">Age</label>
-          <input id="age" type="number" min="{{step5.personalData.age}}"
-            max="{{step5.personalData.age + 60}}" size="5" ng-model="step5.tempAge">
+          <input id="age" type="number"
+            min="{{step5.personalData.age}}"
+            max="{{step5.personalData.age + 60}}"
+            size="5" ng-model="step5.tempAge">
           <select id="penaltyCharacteristic"
             ng-model="step5.personalData.agePenalty[0]">
             <option value="str">STR</option>

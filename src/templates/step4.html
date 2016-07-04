@@ -5,8 +5,8 @@
       <ul>
         <li ng-repeat="characteristic in step4.characteristics track by $index">
           <input class="score populated" type="button"
-            value="{{step4.characteristic[1]}}" disabled>
-          <label class="characteristics-label">{{step4.characteristic[0]}}</label>
+            value="{{characteristic[1]}}" disabled>
+          <label class="characteristics-label">{{characteristic[0]}}</label>
         </li>
       </ul>
     </div>
@@ -55,7 +55,7 @@
             </li>
             <li>
               <input id="sanpoints" class="points" type="button"
-                value="{{rolls.sanpoints[1]}}" disabled>
+                value="{{step4.rolls.sanpoints[1]}}" disabled>
               <label for="sanpoints" class="characteristics-label">Sanity Points</label>
             </li>
           </ul>
