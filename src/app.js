@@ -76,61 +76,58 @@
     vm.$log = $log;
 
     // JSON
-    vm.character = {};
-    vm.characteristics = {};
-    vm.rolls = {};
-    vm.personalData = {};
-    vm.income = {};
-    vm.skills1 = {};
-    vm.skills2 = {};
-    vm.skills3 = {};
-    vm.weapons = {};
-    vm.ranged = {};
-
-    // Temporary
-    vm.tempSkills1 = {};
-    vm.tempSkills2 = {};
-    vm.tempSkills3 = {};
-    vm.defaultSkillPoints = 0;
-
-    // Final
-    vm.json = {};
- 
+//    vm.character = {};
+//    vm.characteristics = {};
+//    vm.rolls = {};
+//    vm.personalData = {};
+//    vm.income = {};
+//    vm.skills1 = {};
+//    vm.skills2 = {};
+//    vm.skills3 = {};
+//    vm.weapons = {};
+//    vm.ranged = {};
+//
+//    // Temporary
+//    vm.tempSkills1 = {};
+//    vm.tempSkills2 = {};
+//    vm.tempSkills3 = {};
+//    vm.defaultSkillPoints = 0;
+//
+//    // Final
+//    vm.json = {};
+// 
     var service = {
       getData: getData,
-      setData: setData,
       data: vm
     };
 
     return service;
     
-    function getData(callback) {
+    function getData() {
       $http.get('mock/seed.json')
-          .then(callback);
+        .then(function(response) {
+          vm.data = response.data;
+
+          vm.character = vm.data.character;
+          vm.characteristics = vm.character.characteristics;
+          vm.rolls = vm.character.rolls;
+          vm.personalData = vm.character.personalData;
+          vm.income = vm.character.income;
+          vm.skills1 = vm.character.skills1;
+          vm.skills2 = vm.character.skills2;
+          vm.skills3 = vm.character.skills3;
+          vm.weapons = vm.character.weapons;
+          vm.ranged = vm.character.ranged;
+
+          vm.tempSkills1 = {};
+          vm.tempSkills2 = {};
+          vm.tempSkills3 = {};
+          vm.defaultSkillPoints = 0;
+
+          vm.json = {};
+          $log.info('Data load complete');
+        });
     };
-
-    function setData(response) {
-      vm.data = response.data;
-
-      vm.character = vm.data.character;
-      vm.characteristics = vm.character.characteristics;
-      vm.rolls = vm.character.rolls;
-      vm.personalData = vm.character.personalData;
-      vm.income = vm.character.income;
-      vm.skills1 = vm.character.skills1;
-      vm.skills2 = vm.character.skills2;
-      vm.skills3 = vm.character.skills3;
-      vm.weapons = vm.character.weapons;
-      vm.ranged = vm.character.ranged;
-
-      vm.tempSkills1 = {};
-      vm.tempSkills2 = {};
-      vm.tempSkills3 = {};
-      vm.defaultSkillPoints = 0;
-
-      vm.json = {};
-      $log.info('Data load complete');
-    }
   }
 
   angular
@@ -143,7 +140,7 @@
     var vm = this;
     vm.$log = $log;
 
-    dataService.getData(dataService.setData);
+    dataService.getData();
   }
   
   angular

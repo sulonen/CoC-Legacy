@@ -2,6 +2,7 @@
 
 describe('Factory dataService', function() {
   var dataService;
+  var testData;
 
   beforeEach(module('app'));
 
@@ -12,5 +13,6 @@ describe('Factory dataService', function() {
   it('should instantiate a factory', function() {
     expect(typeof dataService).toBe('object');
     expect(typeof dataService.data).toBe('object');
+    expect(typeof dataService.getData).toBe('function');
   });
 });
