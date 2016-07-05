@@ -2,9 +2,9 @@
 
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
-const mocha = require('gulp-mocha');
 const exec = require('child_process').exec;
 const webpack = require('webpack-stream');
+const Server = require('karma').Server;
 
 const paths = ['*.js', 'src/*.js', 'test/*_spec.js', 'models/*.js'];
 
@@ -27,9 +27,11 @@ gulp.task('lint', () => {
     .pipe(eslint.format());
 });
 
-gulp.task('test', () => {
-  return gulp.src(paths)
-    .pipe(mocha());
+gulp.task('test', (done) => {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 gulp.task('watch', () => {
