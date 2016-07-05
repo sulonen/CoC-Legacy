@@ -75,27 +75,6 @@
     var vm = this;
     vm.$log = $log;
 
-    // JSON
-//    vm.character = {};
-//    vm.characteristics = {};
-//    vm.rolls = {};
-//    vm.personalData = {};
-//    vm.income = {};
-//    vm.skills1 = {};
-//    vm.skills2 = {};
-//    vm.skills3 = {};
-//    vm.weapons = {};
-//    vm.ranged = {};
-//
-//    // Temporary
-//    vm.tempSkills1 = {};
-//    vm.tempSkills2 = {};
-//    vm.tempSkills3 = {};
-//    vm.defaultSkillPoints = 0;
-//
-//    // Final
-//    vm.json = {};
-// 
     var service = {
       getData: getData,
       data: vm
