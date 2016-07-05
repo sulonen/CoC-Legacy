@@ -8,11 +8,9 @@ describe('Factory dataService', function() {
   beforeEach(inject(function(_dataService_) {
     dataService = _dataService_;
   }));
-  
-  it('should instantiate a factory', function() {
-    dataService.getData(dataService.setData);
-    expect(typeof dataService).toBe('object');
-    expect(typeof dataService.data).toBe('object'); 
-  });
 
+  it('should instantiate a factory', function() {
+    expect(typeof dataService).toBe('object');
+    expect(typeof dataService.data).toBe('object');
+  });
 });
