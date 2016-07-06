@@ -30,7 +30,7 @@ gulp.task('lint', () => {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src(['src/**/*.js'])
+  return gulp.src(['src/**.js'])
     .pipe(istanbul())
     .pipe(istanbul.hookRequire());
 });

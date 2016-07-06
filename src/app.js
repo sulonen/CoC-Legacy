@@ -527,8 +527,11 @@
       var pointsDifference = proposedPoints - vm.defaultSkillPoints;
       vm.availablePoints = vm.totalPoints - pointsDifference;
   
-      vm.availablePoints < 0 ? displayPoints.className
-          = 'available-points red' : displayPoints.className = 'available-points';
+      vm.availablePoints < 0
+        ? displayPoints.className
+          = 'available-points red'
+        : displayPoints.className
+          = 'available-points';
     };
   
     vm.update = function() {
@@ -632,7 +635,8 @@
       $document[0].getElementById('dex').className = 'score';
       $document[0].getElementById('app').value = '';
       $document[0].getElementById('app').className = 'score';
-      var list = $document[0].getElementById('rolls1').getElementsByTagName('input');
+      var list = $document[0].getElementById('rolls1')
+        .getElementsByTagName('input');
       for (var i = 0; i < list.length; i++) {
         list[i].className = 'score populated';
       }
@@ -654,7 +658,8 @@
       $document[0].getElementById('siz').className = 'score';
       $document[0].getElementById('int').value = '';
       $document[0].getElementById('int').className = 'score';
-      var list = $document[0].getElementById('rolls2').getElementsByTagName('input');
+      var list = $document[0].getElementById('rolls2')
+        .getElementsByTagName('input');
       for (var i = 0; i < list.length; i++) {
         list[i].className = 'score populated';
       }
@@ -674,7 +679,8 @@
     vm.reroll = function() {
       $document[0].getElementById('edu').value = '';
       $document[0].getElementById('edu').className = 'score';
-      var list = $document[0].getElementById('rolls3').getElementsByTagName('input');
+      var list = $document[0].getElementById('rolls3')
+        .getElementsByTagName('input');
       for (var i = 0; i < list.length; i++) {
         list[i].className = 'score populated';
       }

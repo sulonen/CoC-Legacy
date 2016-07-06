@@ -12,7 +12,7 @@ module.exports = function(config) {
       'node_modules/angular-ui-router/release/angular-ui-router.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/**/*.js',
-      'test/*spec.js'
+      'test/unit/*spec.js'
     ],
 
     exclude: [
