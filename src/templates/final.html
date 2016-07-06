@@ -7,7 +7,7 @@
           <input class="score populated" type="button"
             value="{{characteristic[1]}}" disabled>
           <label class="characteristics-label">
-            {{final.characteristic[0]}}</label>
+            {{characteristic[0]}}</label>
         </li>
       </ul>
     </div>
@@ -124,14 +124,14 @@
             <th>Att</th>
             <th>HP</th>
           </tr>
-          <tr ng-repeat="weapon in weapons">
-            <td>{{final.weapon[0]}}</td>
-            <td>{{final.weapon[1]}}</td>
-            <td>{{final.weapon[2]}}</td>
-            <td>{{final.weapon[3]}}</td>
-            <td>{{final.weapon[4]}}</td>
-            <td>{{final.weapon[5]}}</td>
-            <td>{{final.weapon[6]}}</td>
+          <tr ng-repeat="weapon in final.weapons">
+            <td>{{weapon[0]}}</td>
+            <td>{{weapon[1]}}</td>
+            <td>{{weapon[2]}}</td>
+            <td>{{weapon[3]}}</td>
+            <td>{{weapon[4]}}</td>
+            <td>{{weapon[5]}}</td>
+            <td>{{weapon[6]}}</td>
           </tr>
         </table>
       </div>
