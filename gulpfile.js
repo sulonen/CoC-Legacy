@@ -5,6 +5,8 @@ const eslint = require('gulp-eslint');
 const exec = require('child_process').exec;
 const webpack = require('webpack-stream');
 const Server = require('karma').Server;
+const istanbul = require('gulp-istanbul');
+const protractor = require('gulp-protractor').protractor;
 
 const paths = ['*.js', 'src/*.js', 'test/*_spec.js', 'models/*.js'];
 
@@ -27,7 +29,20 @@ gulp.task('lint', () => {
     .pipe(eslint.format());
 });
 
-gulp.task('test', (done) => {
+gulp.task('pre-test', function () {
+  return gulp.src(['src/**/*.js'])
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire());
+});
+
+gulp.task('test-e2e', ['pre-test'], function () {
+  return gulp.src(['test/e2e/*spec.js'])
+    .pipe(protractor({configFile: 'protractor.conf.js'}))
+    .pipe(istanbul.writeReports())
+    .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
+});
+
+gulp.task('test-unit', (done) => {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
