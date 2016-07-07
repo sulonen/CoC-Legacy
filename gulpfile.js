@@ -3,7 +3,8 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const exec = require('child_process').exec;
-const webpack = require('webpack-stream');
+const gulpWebpack = require('webpack-stream');
+const webpack = require('webpack');
 const Server = require('karma').Server;
 const istanbul = require('gulp-istanbul');
 const protractor = require('gulp-protractor').protractor;
@@ -70,23 +71,24 @@ gulp.task('static', function() {
 
 gulp.task('webpack:dist', () => {
   return gulp.src('./entry.js')
-    .pipe(webpack({
+    .pipe(gulpWebpack({
       output: {
         filename: 'bundle.js'
       },
+      plugins: [new webpack.optimize.UglifyJsPlugin()],
       module: {
         loaders: [{
           test: /\.css$/,
           loaders: ['style', 'css']
         }]
       }
-    }))
+    }, webpack))
     .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('webpack:test', () => {
   return gulp.src('./test/*_spec.js')
-    .pipe(webpack({output: {filename: 'test_bundle.js'}}))
+    .pipe(gulpWebpack({output: {filename: 'test_bundle.js'}}))
     .pipe(gulp.dest('./test'));
 });
 
